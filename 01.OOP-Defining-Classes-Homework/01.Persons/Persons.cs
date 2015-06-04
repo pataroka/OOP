@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01.Persons
 {
     class Persons
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            Person p = new Person("John", 32);
+
+            Console.WriteLine(p.ToString());
         }
     }
 }
