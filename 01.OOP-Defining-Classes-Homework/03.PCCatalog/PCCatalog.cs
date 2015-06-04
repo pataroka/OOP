@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 
 
@@ -32,11 +33,17 @@ namespace _03.PCCatalog
 
             var pcConfig3 = new Computer("MINIX NEO Z64");
 
-            pcConfig1.DisplayInfo();
-            Console.WriteLine();
-            pcConfig2.DisplayInfo();
-            Console.WriteLine();
-            pcConfig3.DisplayInfo();
+            List<Computer> pcConfigs = new List<Computer> {pcConfig1, pcConfig2, pcConfig3};
+
+            var query = from config in pcConfigs
+                orderby config.Price
+                select config;
+            foreach (var config in query)
+            {
+                config.DisplayInfo();
+                Console.WriteLine();
+            }
+
         }
     }
 }

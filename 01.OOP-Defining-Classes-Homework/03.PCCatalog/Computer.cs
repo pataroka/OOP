@@ -45,6 +45,7 @@ namespace _03.PCCatalog
                 }
                 else
                 {
+                    price = 0.00m;
                     foreach (var component in Components)
                     {
                         price += component.Value.Price;
