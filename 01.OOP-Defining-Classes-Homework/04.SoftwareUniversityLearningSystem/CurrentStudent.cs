@@ -1,20 +1,24 @@
-﻿using System;
-
-namespace _04.SoftwareUniversityLearningSystem
+﻿namespace _04.SoftwareUniversityLearningSystem
 {
-    class CurrentStudent : Student
+    internal class CurrentStudent : Student
     {
-        public string CurrentCourse { get; set; }
-
-        public CurrentStudent(string firstName, string lastName, int age, int studentNumber, double averageGrade, string currentCourse) 
+        public CurrentStudent(
+            string firstName, 
+            string lastName, 
+            int age, 
+            int studentNumber, 
+            double averageGrade, 
+            string currentCourse)
             : base(firstName, lastName, age, studentNumber, averageGrade)
         {
-            CurrentCourse = currentCourse;
+            this.CurrentCourse = currentCourse;
         }
+
+        public string CurrentCourse { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0}; Current course: {1}", base.ToString(), CurrentCourse);
+            return string.Format("{0}; Current course: {1}", base.ToString(), this.CurrentCourse);
         }
     }
 }

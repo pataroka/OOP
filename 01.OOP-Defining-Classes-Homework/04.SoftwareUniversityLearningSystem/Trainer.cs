@@ -1,10 +1,11 @@
-﻿using System;
-
-namespace _04.SoftwareUniversityLearningSystem
+﻿namespace _04.SoftwareUniversityLearningSystem
 {
-    class Trainer : Person
+    using System;
+
+    internal class Trainer : Person
     {
-        public Trainer(string firstName, string lastName, int age) : base(firstName, lastName, age)
+        public Trainer(string firstName, string lastName, int age)
+            : base(firstName, lastName, age)
         {
         }
 

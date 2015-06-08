@@ -1,19 +1,25 @@
 ﻿namespace _04.SoftwareUniversityLearningSystem
 {
-    class Student : Person
+    internal class Student : Person
     {
-        public int StudentNumber { get; set; }
-        public double AverageGrade { get; set; }
-
-        public Student(string firstName, string lastName, int age, int studentNumber, double averageGrade) : base(firstName, lastName, age)
+        public Student(string firstName, string lastName, int age, int studentNumber, double averageGrade)
+            : base(firstName, lastName, age)
         {
-            StudentNumber = studentNumber;
-            AverageGrade = averageGrade;
+            this.StudentNumber = studentNumber;
+            this.AverageGrade = averageGrade;
         }
+
+        public int StudentNumber { get; set; }
+
+        public double AverageGrade { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0}\nStudent number: {1}; Average grade: {2}", base.ToString(), StudentNumber, AverageGrade);
+            return string.Format(
+                "{0}\nStudent number: {1}; Average grade: {2}", 
+                base.ToString(), 
+                this.StudentNumber, 
+                this.AverageGrade);
         }
     }
 }

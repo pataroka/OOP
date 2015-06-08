@@ -1,20 +1,24 @@
-﻿using System;
-
-namespace _04.SoftwareUniversityLearningSystem
+﻿namespace _04.SoftwareUniversityLearningSystem
 {
-    class DropoutStudent : Student
+    internal class DropoutStudent : Student
     {
-        public string DropoutReason { get; set; }
-
-        public DropoutStudent(string firstName, string lastName, int age, int studentNumber, double averageGrade, string dropoutReason) 
+        public DropoutStudent(
+            string firstName, 
+            string lastName, 
+            int age, 
+            int studentNumber, 
+            double averageGrade, 
+            string dropoutReason)
             : base(firstName, lastName, age, studentNumber, averageGrade)
         {
-            DropoutReason = dropoutReason;
+            this.DropoutReason = dropoutReason;
         }
+
+        public string DropoutReason { get; set; }
 
         public string Reapply()
         {
-            return String.Format("{0}; Droput reason: {1}", ToString(), DropoutReason);
+            return string.Format("{0}; Droput reason: {1}", this.ToString(), this.DropoutReason);
         }
     }
 }

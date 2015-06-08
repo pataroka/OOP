@@ -1,64 +1,81 @@
-﻿using System;
-
-
-namespace _03.PCCatalog
+﻿namespace _03.PCCatalog
 {
-    class Component
+    using System;
+
+    internal class Component
     {
-        private string name;
         private string details;
+
+        private string name;
+
         private decimal price;
 
-        public Component(string name, decimal price) : this (name, null, price)
+        public Component(string name, decimal price)
+            : this(name, null, price)
         {
         }
 
         public Component(string name, string details, decimal price)
         {
-            Name = name;
-            Details = details;
-            Price = price;
+            this.Name = name;
+            this.Details = details;
+            this.Price = price;
         }
 
         public string Name
         {
-            get { return name; }
+            get
+            {
+                return this.name;
+            }
+
             private set
             {
-                if (value.Trim() == String.Empty || value == null)
+                if (value.Trim() == string.Empty || value == null)
                 {
                     throw new ArgumentException("Name must have a value!");
                 }
-                name = value;
+
+                this.name = value;
             }
         }
 
         public string Details
         {
-            get { return details; }
+            get
+            {
+                return this.details;
+            }
+
             private set
             {
                 if (value != null)
                 {
-                    if (value.Trim() == String.Empty)
+                    if (value.Trim() == string.Empty)
                     {
                         throw new ArgumentException("Value must be either null or non-empty string!");
                     }
                 }
-                details = value;
+
+                this.details = value;
             }
         }
 
         public decimal Price
         {
-            get { return price; }
+            get
+            {
+                return this.price;
+            }
+
             private set
             {
                 if (value < 0)
                 {
                     throw new ArgumentException("Value cannot be a negative number!");
                 }
-                price = value;
+
+                this.price = value;
             }
         }
     }

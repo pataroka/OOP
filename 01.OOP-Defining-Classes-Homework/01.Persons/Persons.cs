@@ -1,10 +1,10 @@
-﻿using System;
-
-namespace _01.Persons
+﻿namespace _01.Persons
 {
-    class Persons
+    using System;
+
+    public static class Persons
     {
-        static void Main()
+        public static void Main()
         {
             Person p = new Person("John", 32);
 

@@ -1,20 +1,25 @@
-﻿using System;
-
-namespace _04.SoftwareUniversityLearningSystem
+﻿namespace _04.SoftwareUniversityLearningSystem
 {
-    class OnsiteStudent : CurrentStudent
+    internal class OnsiteStudent : CurrentStudent
     {
-        public int NumberOfVisits { get; set; }
-
-        public OnsiteStudent(string firstName, string lastName, int age, int studentNumber, double averageGrade, string currentCourse, int numberOfVisits) 
+        public OnsiteStudent(
+            string firstName, 
+            string lastName, 
+            int age, 
+            int studentNumber, 
+            double averageGrade, 
+            string currentCourse, 
+            int numberOfVisits)
             : base(firstName, lastName, age, studentNumber, averageGrade, currentCourse)
         {
-            NumberOfVisits = numberOfVisits;
+            this.NumberOfVisits = numberOfVisits;
         }
+
+        public int NumberOfVisits { get; set; }
 
         public override string ToString()
         {
-            return String.Format("{0}; NumberOfVisits: {1}", base.ToString(), NumberOfVisits);
+            return string.Format("{0}; NumberOfVisits: {1}", base.ToString(), this.NumberOfVisits);
         }
     }
 }

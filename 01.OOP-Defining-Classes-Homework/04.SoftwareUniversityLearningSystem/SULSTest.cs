@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-
-
-namespace _04.SoftwareUniversityLearningSystem
+﻿namespace _04.SoftwareUniversityLearningSystem
 {
-    class SULSTest
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    internal static class SulsTest
     {
-        static void Main()
+        private static void Main()
         {
-            List<Person> people = new List<Person>();
+            var people = new List<Person>();
             people.Add(new Person("Ivan", "Ivanov", 32));
             people.Add(new Person("Petar", "Petrov", 22));
             people.Add(new Student("Dragan", "Draganov", 33, 3456, 4.50));
@@ -23,12 +21,13 @@ namespace _04.SoftwareUniversityLearningSystem
             people.Add(new Trainer("Petar", "NIkolov", 18));
             people.Add(new SeniorTrainer("Dragan", "Petrov", 19));
             people.Add(new JuniorTrainer("Ivan", "Draganov", 19));
-            people.Add(new OnlineStudent("Dragan", "Nikolov", 19, 9876, 5.50,"OOP"));
+            people.Add(new OnlineStudent("Dragan", "Nikolov", 19, 9876, 5.50, "OOP"));
             people.Add(new OnlineStudent("Nikola", "Petrov", 23, 1234, 3.35, "Databases"));
             people.Add(new OnsiteStudent("Nikola", "Ivanov", 25, 2341, 4.80, "JavaScript Applications", 25));
             people.Add(new OnsiteStudent("Nikola", "Draganov", 24, 1235, 3.95, "Java Basics", 12));
 
-            var currentStudents = people.Where(p => p is CurrentStudent).OrderBy(p => ((Student) p).AverageGrade).Select(p => p);
+            var currentStudents =
+                people.Where(p => p is CurrentStudent).OrderBy(p => ((Student)p).AverageGrade).Select(p => p);
 
             foreach (var st in currentStudents)
             {

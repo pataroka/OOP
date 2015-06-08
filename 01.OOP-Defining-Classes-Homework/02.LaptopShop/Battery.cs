@@ -1,86 +1,110 @@
-﻿using System;
-
-namespace _02.LaptopShop
+﻿namespace _02.LaptopShop
 {
-    class Battery
+    using System;
+
+    internal class Battery
     {
-        private string cellType;
-        private int numberOfCells;
         private int capacity;
+
+        private string cellType;
+
         private double life;
 
-        public Battery(int numberOfcells, int capacity, double life) : this(null, numberOfcells, capacity, life)
+        private int numberOfCells;
+
+        public Battery(int numberOfcells, int capacity, double life)
+            : this(null, numberOfcells, capacity, life)
         {
         }
 
         public Battery(string cellType, int numberOfCells, int capacity, double life)
         {
-            CellType = cellType;
-            NumberOfCells = numberOfCells;
-            Capacity = capacity;
-            Life = life;
+            this.CellType = cellType;
+            this.NumberOfCells = numberOfCells;
+            this.Capacity = capacity;
+            this.Life = life;
         }
 
         public string CellType
         {
-            get {return cellType;}
+            get
+            {
+                return this.cellType;
+            }
+
             set
             {
-                if (value.Trim() == String.Empty || value == null)
+                if (value.Trim() == string.Empty || value == null)
                 {
-                    cellType = "Unknown";
+                    this.cellType = "Unknown";
                 }
-                cellType = value;
+
+                this.cellType = value;
             }
         }
 
         public int NumberOfCells
         {
-            get { return numberOfCells; }
+            get
+            {
+                return this.numberOfCells;
+            }
+
             set
             {
                 if (value < 1)
                 {
                     throw new ArgumentException("Value cannot be zero or negative!");
                 }
-                numberOfCells = value;
+
+                this.numberOfCells = value;
             }
         }
 
         public int Capacity
         {
-            get { return capacity; }
+            get
+            {
+                return this.capacity;
+            }
+
             set
             {
                 if (value < 1)
                 {
                     throw new ArgumentException("Value cannot be zero or negative!");
                 }
-                capacity = value;
+
+                this.capacity = value;
             }
         }
 
         public double Life
         {
-            get { return life; }
+            get
+            {
+                return this.life;
+            }
+
             set
             {
-                if (value < Double.Epsilon)
+                if (value < double.Epsilon)
                 {
                     throw new ArgumentException("Value cannot be zero or negative!");
                 }
-                life = value;
+
+                this.life = value;
             }
         }
 
         public override string ToString()
         {
-            return String.Format("{0}, {1}-cells, {2} mAh", CellType, NumberOfCells, Capacity);
+            return string.Format("{0}, {1}-cells, {2} mAh", this.CellType, this.NumberOfCells, this.Capacity);
         }
 
         public string BatteryLife()
         {
-            return String.Format("{0:F1} hours", Life);
+            return string.Format("{0:F1} hours", this.Life);
         }
     }
 }
