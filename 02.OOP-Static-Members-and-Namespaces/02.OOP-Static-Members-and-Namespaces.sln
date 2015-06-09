@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problems1to4", "Problems1to
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.HTMLDispatcher", "05.HTMLDispatcher\05.HTMLDispatcher.csproj", "{C939C1A8-905E-48C2-8EB1-8BE73238D24A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.BitArray", "06.BitArray\06.BitArray.csproj", "{36AEE9F7-7DF8-4BD7-B10E-C8470E5E60EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C939C1A8-905E-48C2-8EB1-8BE73238D24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C939C1A8-905E-48C2-8EB1-8BE73238D24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C939C1A8-905E-48C2-8EB1-8BE73238D24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36AEE9F7-7DF8-4BD7-B10E-C8470E5E60EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36AEE9F7-7DF8-4BD7-B10E-C8470E5E60EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36AEE9F7-7DF8-4BD7-B10E-C8470E5E60EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36AEE9F7-7DF8-4BD7-B10E-C8470E5E60EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
