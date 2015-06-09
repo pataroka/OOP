@@ -24,21 +24,21 @@
                 double result = Math.Sqrt(num);
                 Console.WriteLine(result);
             }
-            catch (ArgumentNullException)
+            catch (ArgumentNullException ex)
             {
-                Console.Error.WriteLine("Input must have a value!");
+                Console.Error.WriteLine("Input must have a value!\n" + ex.ToString());
             }
             catch (FormatException fe)
             {
                 Console.Error.WriteLine("Invalid format!\n" + fe.ToString());
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException or)
             {
-                Console.Error.WriteLine("Input cannot take negative value!");
+                Console.Error.WriteLine("Input cannot take negative value!\n" + or.ToString());
             }
-            catch (OverflowException)
+            catch (OverflowException oe)
             {
-                Console.Error.WriteLine("Input exceeds the boundaries of the Int32 type!");
+                Console.Error.WriteLine("Input exceeds the boundaries of the Int32 type!\n" + oe.ToString());
             }
             finally
             {

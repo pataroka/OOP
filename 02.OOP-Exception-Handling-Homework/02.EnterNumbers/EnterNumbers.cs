@@ -28,25 +28,25 @@
                     start = number;
                     counter--;
                 }
-                catch (ArgumentNullException)
+                catch (ArgumentNullException ne)
                 {
-                    Console.Error.WriteLine("Input cannot be null or empty!");
+                    Console.Error.WriteLine("Input cannot be null or empty!\n" + ne.ToString());
                 }
-                catch (FormatException)
+                catch (FormatException fe)
                 {
-                    Console.Error.WriteLine("Input is not in the correct format!");
+                    Console.Error.WriteLine("Input is not in the correct format!\n" + fe.ToString());
                 }
-                catch (ArgumentOutOfRangeException)
+                catch (ArgumentOutOfRangeException or)
                 {
-                    Console.Error.WriteLine("The input number has to be in range [{0}..{1}]", start, end);
+                    Console.Error.WriteLine("The input number has to be in range [{0}..{1}]\n{2}", start, end, or.ToString());
                 }
-                catch (OverflowException)
+                catch (OverflowException of)
                 {
-                    Console.Error.WriteLine("The input number exceeds the boundaries of the Int32 type!");
+                    Console.Error.WriteLine("The input number exceeds the boundaries of the Int32 type!\n" + of.ToString());
                 }
-                catch (ApplicationException)
+                catch (ApplicationException ae)
                 {
-                    Console.Error.WriteLine("Program execution cannot continue!");
+                    Console.Error.WriteLine("Program execution cannot continue!\n" + ae.ToString());
                     numbers.Add(number);
                     counter = 0;
                 }
