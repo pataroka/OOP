@@ -26,10 +26,8 @@
                 {
                     return this.pathList[index];
                 }
-                else
-                {
-                    throw new IndexOutOfRangeException(string.Format("Index {0} is invalid!", index));
-                }
+
+                throw new IndexOutOfRangeException(string.Format("Index {0} is invalid!", index));
             }
 
             set
@@ -38,6 +36,7 @@
                 {
                     throw new ArgumentNullException(string.Format("Value {0} is invalid!", (Point3D)null));
                 }
+
                 if (index < 0 || index >= this.pathList.Count)
                 {
                     throw new IndexOutOfRangeException(string.Format("Index {0} is invalid!", index));
@@ -50,14 +49,14 @@
             return ((IEnumerable<Point3D>)this.pathList).GetEnumerator();
         }
 
-        public override string ToString()
-        {
-            return string.Format(string.Join("\n", this.pathList));
-        }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
+        }
+
+        public override string ToString()
+        {
+            return string.Format(string.Join("\n", this.pathList));
         }
 
         public void Add(Point3D p1)

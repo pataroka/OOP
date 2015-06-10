@@ -28,6 +28,7 @@
                 {
                     throw new ArgumentNullException(string.Format("Value {0} not valid!", value));
                 }
+
                 this.name = value;
             }
         }

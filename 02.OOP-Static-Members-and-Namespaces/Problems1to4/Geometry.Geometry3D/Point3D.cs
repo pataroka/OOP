@@ -9,7 +9,6 @@
             this.X = x;
             this.Y = y;
             this.Z = z;
-
         }
 
         public Point3D StartingPoint

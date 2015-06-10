@@ -6,7 +6,7 @@
     public class BitArray
     {
         private int length;
-        
+
         public BitArray(int length)
         {
             this.Length = length;
@@ -35,6 +35,7 @@
                 {
                     throw new ArgumentOutOfRangeException("value", "The length must be in the range:[1...100 000]");
                 }
+
                 this.length = value;
             }
         }
@@ -43,15 +44,17 @@
         {
             get
             {
-                return this.Bits[index] == true ? 1 : 0;
+                return this.Bits[index] ? 1 : 0;
             }
 
             set
             {
                 if (index < 0 || index >= this.Bits.Length)
                 {
-                    throw new ArgumentOutOfRangeException(string.Format("The index must be in the range:[0...{0}]", this.Bits.Length - 1));
+                    throw new ArgumentOutOfRangeException(
+                        string.Format("The index must be in the range:[0...{0}]", this.Bits.Length - 1));
                 }
+
                 switch (value)
                 {
                     case 0:
@@ -80,7 +83,7 @@
 
         private static bool[] ToBools(string binary)
         {
-            bool [] bools = new bool[binary.Length];
+            bool[] bools = new bool[binary.Length];
             for (int i = 0, j = binary.Length - 1; i < binary.Length; i++, j--)
             {
                 if (binary[i] == '1')
