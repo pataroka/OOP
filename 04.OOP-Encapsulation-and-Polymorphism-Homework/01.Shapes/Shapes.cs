@@ -10,20 +10,11 @@
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-            object[] objects = { new Triangle(4, 5.6, 6.7), new Rectangle(4, 8), new Circle(4.5) };
+            IShape[] shapes = { new Triangle(4, 5.6, 6.7), new Rectangle(4, 8), new Circle(4.5) };
             
-            foreach (var obj in objects)
+            foreach (var shape in shapes)
             {
-                if (obj is BasicShape)
-                {
-                    var shape = (BasicShape)obj;
-                    Console.WriteLine("{0}area = {1, -6:F2} perimeter = {2:F2}", shape.GetType().Name.PadRight(10), shape.CalculateArea(), shape.CalculatePerimeter());
-                }
-                else
-                {
-                    var shape = (Circle)obj;
-                    Console.WriteLine("{0}area = {1, -6:F2} perimeter = {2:F2}", shape.GetType().Name.PadRight(10), shape.CalculateArea(), shape.CalculatePerimeter());
-                }
+                Console.WriteLine("{0}area = {1, -6:F2} perimeter = {2:F2}", shape.GetType().Name.PadRight(10), shape.CalculateArea(), shape.CalculatePerimeter());
             }
         }
     }
