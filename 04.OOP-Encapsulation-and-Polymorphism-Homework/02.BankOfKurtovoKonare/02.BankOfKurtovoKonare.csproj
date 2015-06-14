@@ -41,7 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
     <Compile Include="BankOfKurtovoKonare.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Deposit.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="IIntrestable.cs" />
+    <Compile Include="Loan.cs" />
+    <Compile Include="Mortgage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
