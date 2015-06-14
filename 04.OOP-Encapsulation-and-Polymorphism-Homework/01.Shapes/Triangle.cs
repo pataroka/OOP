@@ -11,11 +11,12 @@
         private double sideC;
 
         public Triangle(double sideA, double sideB, double sideC)
-            : base(sideA, Math.Sqrt((sideA + sideB + sideC) / 2))
+            : base(sideA, 0)
         {
             this.SideA = sideA;
             this.SideB = sideB;
             this.SideC = sideC;
+            this.Height = this.CalculateArea() * 2 / this.SideA;
         }
 
         public double SideA
@@ -74,7 +75,7 @@
 
         public override double CalculateArea()
         {
-            double p = (this.sideA + this.sideB + this.sideC) / 2;
+            double p = this.CalculatePerimeter() / 2;
             return Math.Sqrt(p * (p - this.SideA) * (p - this.SideB) * (p - this.SideC));
         }
 
