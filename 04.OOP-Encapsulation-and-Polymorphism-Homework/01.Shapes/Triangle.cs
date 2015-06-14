@@ -74,7 +74,8 @@
 
         public override double CalculateArea()
         {
-            return Math.Sqrt((this.sideA + this.sideB + this.sideC) / 2);
+            double p = (this.sideA + this.sideB + this.sideC) / 2;
+            return Math.Sqrt(p * (p - this.SideA) * (p - this.SideB) * (p - this.SideC));
         }
 
         public override double CalculatePerimeter()
