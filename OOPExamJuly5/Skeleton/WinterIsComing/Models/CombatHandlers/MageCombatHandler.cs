@@ -17,7 +17,7 @@
             this.SpellIndex = 0;
         }
 
-        public new int SpellIndex
+        public override int SpellIndex
         {
             get
             {

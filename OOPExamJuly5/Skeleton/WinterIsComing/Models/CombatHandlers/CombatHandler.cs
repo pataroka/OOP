@@ -11,9 +11,10 @@
         public CombatHandler(IUnit unit)
         {
             this.Unit = unit;
+            this.SpellIndex = 0;
         }
 
-        public int SpellIndex { get; set; }
+        public virtual int SpellIndex { get; set; }
 
         public IUnit Unit { get; set; }
 

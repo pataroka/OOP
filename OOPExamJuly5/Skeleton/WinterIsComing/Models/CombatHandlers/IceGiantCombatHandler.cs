@@ -14,7 +14,6 @@
         public IceGiantCombatHandler(IUnit unit)
             : base(unit)
         {
-            this.SpellIndex = 0;
         }
 
         public override IEnumerable<IUnit> PickNextTargets(IEnumerable<IUnit> candidateTargets)
