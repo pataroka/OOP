@@ -43,8 +43,7 @@
                 throw new NotEnoughEnergyException(string.Format("{0} does not have enough energy to cast {1}", caster.Name, spell.GetType().Name));
             }
 
-            caster.EnergyPoints -= spell.EnergyCost;
-            caster.AttackPoints += 5;
+            this.Unit.EnergyPoints -= spell.EnergyCost;
 
             return spell;
         }
