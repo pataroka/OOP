@@ -40,6 +40,11 @@
 
         public override IEnumerable<IUnit> PickNextTargets(IEnumerable<IUnit> candidateTargets)
         {
+            if (!candidateTargets.Any())
+            {
+                return candidateTargets;
+            }
+
             IEnumerable<IUnit> result;
 
             IEnumerable<IUnit> targets = candidateTargets.OrderByDescending(t => t.HealthPoints).ThenBy(t => t.Name);

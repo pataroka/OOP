@@ -15,7 +15,7 @@
 
         public override IEnumerable<IUnit> PickNextTargets(IEnumerable<IUnit> candidateTargets)
         {
-            if (candidateTargets.Count() == 0)
+            if (!candidateTargets.Any())
             {
                 return candidateTargets;
             }

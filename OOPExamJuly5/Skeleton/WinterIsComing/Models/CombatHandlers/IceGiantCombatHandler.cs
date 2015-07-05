@@ -19,6 +19,11 @@
 
         public override IEnumerable<IUnit> PickNextTargets(IEnumerable<IUnit> candidateTargets)
         {
+            if (!candidateTargets.Any())
+            {
+                return candidateTargets;
+            }
+
             var caster = (Unit)this.Unit;
 
             if (caster.HealthPoints <= IceGiantTargetModifier)
